@@ -25,3 +25,15 @@ background-color: rgb(13, 213, 228);
     margin-right: auto; */
     text-align: center;
 }
+.des{
+    font-size: large;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(235, 227, 227);
+    margin-top: 10px;
+}
+.des .tech{
+    background-color: rgb(67, 224, 112);
+    width: 300px;
+    text-align: center;
+}
