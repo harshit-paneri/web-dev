@@ -1,6 +1,9 @@
 .he{
     height: 400px;
 }
+body{
+    background-color:rgb(55, 70, 84);
+}
 
 .card img{
     height: 250px;
@@ -12,4 +15,12 @@
 }
 .cbg{
     background-color: aqua;
+}
+.tex a{
+    color: aliceblue !important;
+}
+.bmbg{
+    background-image: url(https://media.istockphoto.com/id/1180184210/photo/sky-cloud-pink-love-sweet-love-color-tone-for-wedding-card-background.jpg?b=1&s=170667a&w=0&k=20&c=rfFmE142uWnkUF5h7sDu9zhzJJFDjP3yqF8KwxtKh60=);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
