@@ -1,0 +1,15 @@
+.he{
+    height: 400px;
+}
+
+.card img{
+    height: 250px;
+    width: 265px;
+
+}
+.cen{
+    justify-content: center;
+}
+.cbg{
+    background-color: aqua;
+}
