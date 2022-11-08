@@ -1,29 +1,60 @@
-.he{
+.he {
     height: 400px;
 }
-body{
-    background-color:rgb(55, 70, 84);
+
+body {
+    background-color: rgb(55, 70, 84);
 }
 
-.card img{
+.card img {
     height: 250px;
     width: 265px;
 
 }
-.cen{
+
+.cen {
     justify-content: center;
 }
-.cbg{
+
+.cbg {
     background-color: aqua;
+    border-radius: 25px;
 }
-.tex a{
+
+.tex a {
     color: aliceblue !important;
 }
-.bmbg{
-    background-image: url(https://media.istockphoto.com/id/1180184210/photo/sky-cloud-pink-love-sweet-love-color-tone-for-wedding-card-background.jpg?b=1&s=170667a&w=0&k=20&c=rfFmE142uWnkUF5h7sDu9zhzJJFDjP3yqF8KwxtKh60=);
+
+.bmbg {
+    /* background-image: url(https://media.istockphoto.com/id/1180184210/photo/sky-cloud-pink-love-sweet-love-color-tone-for-wedding-card-background.jpg?b=1&s=170667a&w=0&k=20&c=rfFmE142uWnkUF5h7sDu9zhzJJFDjP3yqF8KwxtKh60=); */
+    background-color: aquamarine;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.pin{
+
+.pin {
     color: pi;
 }
+
+.tx {
+    background-color: azure;
+    margin: 40px;
+    border-radius: 30px;
+}
+
+.one1 p {
+    padding: 50px;
+}
+
+.one1 img {
+    border-radius: 20px;
+    height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+
+/* .one1{
+    justify-content: center;
+} */
