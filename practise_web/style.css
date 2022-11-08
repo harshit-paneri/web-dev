@@ -5,3 +5,9 @@
 .space{
     justify-content: space-between;
 }
+.block{
+    border: 2px black solid;
+}
+.block-dotted{
+    border: 2px black dotted;
+}
