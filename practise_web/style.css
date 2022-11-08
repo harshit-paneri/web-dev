@@ -1,0 +1,7 @@
+.head-img img{
+    width: 400px;
+    margin-top: 5px;
+}
+.space{
+    justify-content: space-between;
+}
