@@ -58,3 +58,13 @@ body {
 hr{
     border-top: 10px solid rgb(255, 255, 255);  
 }
+.flx-color{
+    background-color: rgb(253, 161, 3);
+    border-radius: 5px;
+}
+.space{
+    justify-content: space-between;
+}
+.flex-img img{
+    border-radius: 10px;
+}
