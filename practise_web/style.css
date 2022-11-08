@@ -11,3 +11,12 @@
 .block-dotted{
     border: 2px black dotted;
 }
+.head{
+    font-style: italic;
+    font-weight: bold;
+}
+.col-4 img{
+    width: 300px;
+    border: 2px black solid;
+    border-radius: 10px;
+}
