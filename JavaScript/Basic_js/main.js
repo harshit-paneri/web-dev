@@ -34,3 +34,6 @@ var studInfo={
     roll_no: 21,
     address : "sec.6 opp police staion",
 }
+
+var game = "GTA VICE CITY";
+console.log(game.length);
