@@ -37,3 +37,22 @@ var studInfo={
 
 var game = "GTA VICE CITY";
 console.log(game.length);
+
+// Home Work
+function big(){
+    document.getElementById("big").style.fontSize='35px';
+}
+
+let nk = 16 + 4 + "Volvo";
+console.log(nk);
+
+document.getElementById("ok").innerHTML = nk;
+
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"';
+
+document.getElementById("singleq").innerHTML =
+answer1 + "<br>" + 
+answer2 + "<br>" + 
+answer3;
