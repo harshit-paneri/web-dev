@@ -68,6 +68,16 @@ console.log(typeof number[2]);
 // let b = number.splice(2,0,"90");
 // console.log(number);
 
-const fruits = ["Banana", "Orange", "Apple", "Mango","89"];
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let length = fruits.push("Kiwi");
+
+
 console.log(fruits.sort());
 console.log(fruits.reverse());
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+
+const myChildren = myGirls.concat(myBoys);
+
+console.log(myChildren);
