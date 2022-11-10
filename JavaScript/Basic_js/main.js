@@ -56,3 +56,18 @@ document.getElementById("singleq").innerHTML =
 answer1 + "<br>" + 
 answer2 + "<br>" + 
 answer3;
+
+
+let number = [1,2,"3",4,5,6,7,8];
+console.log(number[2]);
+console.log(typeof number[2]);
+
+// let a = number.slice(2,4);
+// console.log(a);
+
+// let b = number.splice(2,0,"90");
+// console.log(number);
+
+const fruits = ["Banana", "Orange", "Apple", "Mango","89"];
+console.log(fruits.sort());
+console.log(fruits.reverse());
