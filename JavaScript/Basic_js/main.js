@@ -60,6 +60,7 @@ answer3;
 
 let number = [1,2,"3",4,5,6,7,8];
 console.log(number[2]);
+// Type OF : 
 console.log(typeof number[2]);
 
 // let a = number.slice(2,4);
@@ -116,8 +117,32 @@ function myFunc(total, num) {
   console.log("UTC");
   console.log(d.getUTCHours());
 
+  //TIME SET
+  console.log("Time To SET ");
+  console.log(d.setDate(8));
+  console.log(d.toString());
+  console.log(d.setMonth(9));
+  console.log(d.setFullYear(2090));
+  console.log(d);
+
   const k = new Date(2002,09,29);
   console.log(k);
 
   const jk = new Date(09,09,29);
   console.log(jk);
+
+  // Math
+
+  console.log(Math.ceil(4.9)*10);
+  console.log(Math.floor(Math.random() * 10));
+  let ok = new Set([1,2,3,7]);
+  ok.add(4);
+  console.log(ok);
+
+  let x = new Map([
+    ["name","ram"],
+    ["class","7"],
+    ["roll","21"]
+  ])
+
+  console.log(x);
