@@ -81,3 +81,43 @@ const myBoys = ["Emil", "Tobias", "Linus"];
 const myChildren = myGirls.concat(myBoys);
 
 console.log(myChildren);
+
+const numberss = [175, 50, 25];
+numberss.reduce(myFunc);
+function myFunc(total, num) {
+    console.log(total);
+    console.log(num);
+    return total - num;
+  }
+
+  console.log("done");
+
+  let obj = {
+    name : 'Harshit',
+    college : 'Techno',
+  };
+  for(let key in obj){
+    console.log(obj[key]);
+  }
+
+  let num=[1,2,3];
+  for(let x of num){
+    console.log(x);
+  }
+// DATE 
+
+  const d = new Date()
+  console.log(d);
+  console.log(d.toDateString());
+  console.log("get Date : ");
+  console.log(d.getDate());
+  console.log(d.getMonth());
+  console.log(d.getFullYear());
+  console.log("UTC");
+  console.log(d.getUTCHours());
+
+  const k = new Date(2002,09,29);
+  console.log(k);
+
+  const jk = new Date(09,09,29);
+  console.log(jk);
