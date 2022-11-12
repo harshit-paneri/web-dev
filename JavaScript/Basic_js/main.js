@@ -200,7 +200,7 @@ function myFunc(total, num) {
   let fullName = man.fullName.bind(member);
   console.log(fullName);
 
-  console.log("Pannu")
+  console.log("hey, buddy DOM")
 
 const xx=document.createElement('div');
 xx.setAttribute('id','demo');
@@ -214,3 +214,6 @@ xx.style.color='Green';
 // function(callback){
 //   callback();
 // }
+
+const count = () => {console.log('Hello') }
+setTimeout(count, 5000);
