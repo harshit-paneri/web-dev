@@ -162,3 +162,40 @@ function myFunc(total, num) {
       message.innerHTML = "Input is " + err;
     }
   }
+
+  // This function
+  const person1 = {
+    firstName : 'Ram',
+    lastName : 'Singh',
+    fullName : function()
+    {
+      return this.firstName + " " + this.lastName;
+    }
+  };
+
+  const person2 = {
+    firstName : 'Tech',
+    lastName : 'speed',
+  }
+  console.log(person1.fullName.call(person2));
+
+  // apply
+  console.log(person1.fullName.apply(person2));
+
+
+  //console.log(person1.fullName());
+
+  const man = {
+    firstName : 'Mukesh',
+    lastName : 'Sharma',
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    } 
+  }
+  const member = {
+    firstName:"Hege",
+    lastName: "Nilsen",
+  }
+  
+  let fullName = man.fullName.bind(member);
+  console.log(fullName)
