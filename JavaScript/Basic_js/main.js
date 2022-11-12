@@ -198,4 +198,19 @@ function myFunc(total, num) {
   }
   
   let fullName = man.fullName.bind(member);
-  console.log(fullName)
+  console.log(fullName);
+
+  console.log("Pannu")
+
+const xx=document.createElement('div');
+xx.setAttribute('id','demo');
+y=document.body.appendChild(xx);
+xx.innerHTML="Hello World!!!";
+console.log(y);
+
+xx.style.backgroundColor='yellow';
+xx.style.color='Green';
+
+// function(callback){
+//   callback();
+// }
