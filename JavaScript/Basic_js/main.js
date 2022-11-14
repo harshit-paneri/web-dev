@@ -217,3 +217,31 @@ xx.style.color='Green';
 
 const count = () => {console.log('Hello') }
 setTimeout(count, 5000);
+
+// clouser function
+
+function name()
+{
+  x= 'ram';
+  console.log( "name()" + x);
+  x = 'jash'
+  return function() {
+    console.log("clouser() " + x);
+  }
+}
+
+// promsise
+
+const promise =new Promise(function(resolve, reject){
+   console.log("hii promise");
+   resolve(true);
+   //reject(false)
+});
+
+promise.then((vlue)=>{
+  console.log('resolve '+ vlue);
+})
+
+promise.catch((error)=>{
+  console.log('reject catch ' + error);
+})
