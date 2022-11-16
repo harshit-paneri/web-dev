@@ -13,11 +13,26 @@ db.dropDatabase()
 create new collection:
 db.createCollection('collection_name')
 
-show all collections:
-show collections
+## show all collections:
+`` show collections ``
 
-drop collection in db:
-db.collection_name.drop()
+## drop collection in db:
+`` db.collection_name.drop() ``
 
 ## to insert in collection
-db.users.insert({"name":"Harshit","email":"techspeed.hp@gmail.com","mob-num":"7062948714","address":"udaipur"})
+`` db.users.insert({"name":"Harshit","email":"techspeed.hp@gmail.com","mob-num":"7062948714","address":"udaipur"}) ``
+
+## find cmd
+db.users.find()
+
+## count
+`` db.users.find().count() ``
+
+## count in limit
+`` db.users.find().limit() ``
+
+## find specific argument
+`` db.users.find({"name":"harshit"}) `` 
+
+## to update something
+`` db.users.update({"name":"Abir"},{$set:{"lastname":"Hinger","address":"Patna"}}) ``
