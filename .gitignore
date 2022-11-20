@@ -1,0 +1,4 @@
+# node modeule ignore
+/my_store/node_modules
+
+/node_prac/node_modules
