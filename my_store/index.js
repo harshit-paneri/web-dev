@@ -1,42 +1,50 @@
 const mongo = require("./database/connection");
-const user = require("./database/models/Users");
-const product = require("./database/models/Product");
+const express = require("express");
+const app = express();
+const routes = require("./routes/index.route.js");
 
-const userObject =new user({});
-console.log(userObject);
-const app = async () => { 
+app.use("/",routes);
+
+// const user = require("./database/models/Users");
+// const product = require("./database/models/Product");
+
+// const userObject =new user({});
+// console.log(userObject);
+
+const main = async () => { 
 const connect = await mongo.connectToDb();
+app.listen(3000);
 };
-app();
+main();
 
-const ProductValid = new product(
-    {
-        item_id:1,
-        seller_name:"Namcii",
-        category:"ToothPaste",
-        price:657,
-        seller_number:9867452367,
-    });
-console.log(ProductValid);
+// const ProductValid = new product(
+//     {
+//         item_id:1,
+//         seller_name:"Namcii",
+//         category:"ToothPaste",
+//         price:657,
+//         seller_number:9867452367,
+//     });
+// console.log(ProductValid);
 
 
-const Product1 = new product(
-    {
-        item_id:2,
-        seller_name:"Hanshika",
-        category:"Brush",
-        price:20,
-        seller_number:98667652367,
-    });
-Product1.save();
+// const Product1 = new product(
+//     {
+//         item_id:2,
+//         seller_name:"Hanshika",
+//         category:"Brush",
+//         price:20,
+//         seller_number:98667652367,
+//     });
+// Product1.save();
 
 
 // const express = require('express');
 // const app = express();
 
+
+//route
 // app.get('/',(req, res)=>{
 //     res.send("hii");
 // });
-
 // app.listen(3000);
-
