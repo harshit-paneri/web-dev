@@ -1,0 +1,1 @@
+const sellerModal = require("../database/models/Seller")

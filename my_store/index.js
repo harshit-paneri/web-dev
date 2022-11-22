@@ -2,23 +2,36 @@ const mongo = require("./database/connection");
 const express = require("express");
 const app = express();
 const routes = require("./routes/index.route.js");
+const dotenv = require("dotenv")
+dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use("/",routes);
 
-// const user = require("./database/models/Users");
+// const u ser = require("./database/models/Users");
 // const product = require("./database/models/Product");
 
 // const userObject =new user({});
 // console.log(userObject);
 
 
-
+ 
 const main = async () => { 
 const connect = await mongo.connectToDb();
-app.listen(3000);
+app.listen(process.env.port);
 };
 main();
+
+
+
+
+
+
+
+
+
+
+
 
 // const ProductValid = new product(
 //     {

@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
- 
+const dotenv = require("dotenv")
+dotenv.config();
 exports.connectToDb = async () => {
     mongoose.connect(
-    "mongodb+srv://harshit:harshit123@training.ryycfvp.mongodb.net/my-store",
+      process.env.MONOGO_URI,
     { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(() => {

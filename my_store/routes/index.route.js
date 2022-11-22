@@ -1,8 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const userRoute = require("./user.route");
+const sellerRoute = require("./seller.route");
+const authRouter = require("./auth.route");
 
 router.use("/user",userRoute);
+router.use("/seller",sellerRoute);
+router.use("/auth",authRouter);
 
 router.get('/',(req, res)=>{
     res.send("hii buddy");
