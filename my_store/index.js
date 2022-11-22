@@ -2,7 +2,8 @@ const mongo = require("./database/connection");
 const express = require("express");
 const app = express();
 const routes = require("./routes/index.route.js");
-
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 app.use("/",routes);
 
 // const user = require("./database/models/Users");
@@ -10,6 +11,8 @@ app.use("/",routes);
 
 // const userObject =new user({});
 // console.log(userObject);
+
+
 
 const main = async () => { 
 const connect = await mongo.connectToDb();

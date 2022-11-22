@@ -7,6 +7,7 @@ const product = new Schema({
     category:{type:String},
     price : {type:Number},
     seller_number : {type:Number},
+    user_id:{type:mongoose.SchemaType.ObjectID},
     item_img : [{img_name:String,img_description:String}],
 });
 
