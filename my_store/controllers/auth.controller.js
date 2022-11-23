@@ -4,10 +4,10 @@ const jwt = require("jsonwebtoken")
 
 exports.signup = async (req, res) => {
   const usData = req.body;
-
+  try{
   const userExist =await UserModel.findOne({ email: usData.email }); //findOne or another funtion = exits it return true or false
   //try and catch implement
-  try{
+  
   if (userExist) {
     res.send({
       statusCode: 200,
@@ -16,6 +16,7 @@ exports.signup = async (req, res) => {
       data: userExist,
     });
   }
+  else{
   // const salt = "jkvnksdjvnfdlkvd";
   const password = usData.password+process.env.salt;
   const hash = cryptop.createHash("sha1");
@@ -27,20 +28,38 @@ exports.signup = async (req, res) => {
     email : usData.email,
     mobile_number : usData.mobile_number,
     password: hashPassword
-
   });
 
-  await newUser.save();
-  res.send({
-    statusCode: 200,
-    message: "user created sussefully.",
-    error: false,
-    data: userExist,
-  });
+await newUser.save();
+
+const token = jwt.sign({userId : newUser._id},  process.env.SECRET_KEY);
+console.log(token);
+  
+res.send({
+  statusCode: 200,
+  message: "user created sussefully.",
+  error: false,
+  data: newUser,
+  token:token,
+});
+} 
+
 }catch(error){
-  res.send(error.message);
+  res.send({
+    statusCode:400,
+    message:error.message,
+    error:true,
+    data:null,
+  });
 }
+
 };
+
+
+
+
+
+
 
 //     try{
 //     const userAuth = req.body;
