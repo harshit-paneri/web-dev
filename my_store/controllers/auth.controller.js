@@ -34,6 +34,8 @@ await newUser.save();
 
 const token = jwt.sign({userId : newUser._id},  process.env.SECRET_KEY);
 console.log(token);
+
+
   
 res.send({
   statusCode: 200,
@@ -53,12 +55,80 @@ res.send({
   });
 }
 
+//signin
+exports.signin = async (req, res) =>{
+  // try{
+  //   const userData = req.body;
+
+  //   const search =await UserModel.findOne({ email: usData.email },{password:usData.password});
+  //   const check = UserModel({
+  //     email : usData.email,
+  //     password: hashPassword
+  //   });
+
+  //   res.send({
+  //     statusCode: 200,
+  //     message: "sign in sussefully.",
+  //     error: false,
+  //     data: newUser,
+  //     token:token,
+  //   });
+  // }catch (error) {
+  //   res.send({
+  //     statusCode: 400,
+  //     message: error.message,
+  //     error: true,
+  //     data: null,
+  //   });
+  }
+
 };
 
 
 
 
 
+exports.signin = async (req, res) =>{
+  try{
+    const userData = req.body;
+
+    // const search =await 
+    UserModel.findOne({ email: usData.email },{password:usData.password});
+    // const check = UserModel({
+    //   email : usData.email,
+    //   password: hashPassword
+    // });
+    var passwordIsValid = bcrypt.compareSync(
+      req.body.password,
+      user.password
+    );
+    if (!passwordIsValid) {
+      return res.status(401).send({
+        accessToken: null,
+        message: "Invalid Password!"
+      });
+    }
+    var token = jwt.sign({ email : usData.email }, usData.password, { //config.secret
+      expiresIn: 86400 // 24 hours
+    });    
+
+
+    res.send({
+      statusCode: 200,
+      message: "sign in sussefully.",
+      error: false,
+      data: newUser,
+      token:token,
+    });
+  }catch (error) {
+    res.send({
+      statusCode: 400,
+      message: error.message,
+      error: true,
+      data: null,
+    });
+  }
+ };
 
 
 //     try{
