@@ -33,7 +33,7 @@ exports.signup = async (req, res) => {
 await newUser.save();
 
 const token = jwt.sign({userId : newUser._id},  process.env.SECRET_KEY);
-console.log(token);
+//console.log(token);
 
 
   
