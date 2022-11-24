@@ -51,41 +51,40 @@ exports.signup = async (req, res) => {
   }
 };
 
-  //signin
-  exports.signin = async (req, res) => {
-    try {
-      const usData = req.body;
-      const hash = cryptop.createHash("sha1");
-      hash.update(usData.password + process.env.SALT);
-      const Password = hash.digest("hex");
-      const existCheck = await UserModel.findOne({
-        email: usData.email,
-        password: Password,
+//signin
+exports.signin = async (req, res) => {
+  try {
+    const usData = req.body;
+    const hash = cryptop.createHash("sha1");
+    hash.update(usData.password + process.env.SALT);
+    const Password = hash.digest("hex");
+    const existCheck = await UserModel.findOne({
+      email: usData.email,
+      password: Password,
+    });
+    if (existCheck) {
+      res.send({
+        statusCode: 200,
+        message: "Logged In",
+        error: false,
+        data: existCheck,
       });
-      if (existCheck) {
-        res.send({
-          statusCode: 200,
-          message: "Logged In",
-          error: false,
-          data: existCheck,
-        });
-      } else {
-        res.send({
-          statusCode: 400,
-          message: "User not found. Create a new user",
-          error: true,
-        });
-      }
-    } catch (error) {
+    } else {
       res.send({
         statusCode: 400,
-        message: error.message,
+        message: "User not found. Create a new user",
         error: true,
-        data: null,
       });
     }
-  };
-
+  } catch (error) {
+    res.send({
+      statusCode: 400,
+      message: error.message,
+      error: true,
+      data: null,
+    });
+  }
+};
 
 // exports.signin = async (req, res) =>{
 //   try{

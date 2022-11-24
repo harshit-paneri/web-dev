@@ -3,15 +3,15 @@ const router = express.Router();
 const userRoute = require("./user.route");
 const sellerRoute = require("./seller.route");
 const authRouter = require("./auth.route");
-const authMiddleware = require("../middleware/auth.middleware")
+const authMiddleware = require("../middleware/auth.middleware");
 
 router.use(authMiddleware.verifyToken);
-router.use("/user",userRoute);
-router.use("/seller",sellerRoute);
-router.use("/auth",authRouter);
+router.use("/user", userRoute);
+router.use("/seller", sellerRoute);
+router.use("/auth", authRouter);
 
-router.get('/',(req, res)=>{
-    res.send("hii buddy");
+router.get("/", (req, res) => {
+  res.send("hii buddy");
 });
 
 module.exports = router;

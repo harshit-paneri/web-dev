@@ -2,11 +2,11 @@ const mongo = require("./database/connection");
 const express = require("express");
 const app = express();
 const routes = require("./routes/index.route.js");
-const dotenv = require("dotenv")
+const dotenv = require("dotenv");
 dotenv.config();
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-app.use("/",routes);
+app.use(express.urlencoded({ extended: false }));
+app.use("/", routes);
 
 // const u ser = require("./database/models/Users");
 // const product = require("./database/models/Product");
@@ -14,24 +14,11 @@ app.use("/",routes);
 // const userObject =new user({});
 // console.log(userObject);
 
-
- 
-const main = async () => { 
-const connect = await mongo.connectToDb();
-app.listen(process.env.port);
+const main = async () => {
+  const connect = await mongo.connectToDb();
+  app.listen(process.env.port);
 };
 main();
-
-
-
-
-
-
-
-
-
-
-
 
 // const ProductValid = new product(
 //     {
@@ -43,7 +30,6 @@ main();
 //     });
 // console.log(ProductValid);
 
-
 // const Product1 = new product(
 //     {
 //         item_id:2,
@@ -54,10 +40,8 @@ main();
 //     });
 // Product1.save();
 
-
 // const express = require('express');
 // const app = express();
-
 
 //route
 // app.get('/',(req, res)=>{
