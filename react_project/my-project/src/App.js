@@ -1,9 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-// import '../components/header.js'
-import {Header} from './components/Header.js';
-import {Footer} from './components/Footer.js';
-import {Siginup} from './components/Siginup.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Header } from "./components/Header";
+import {About} from "./components/About";
+import {Signup} from "./components/Signup";
 
 function App() {
   const add = () =>{
@@ -11,10 +10,14 @@ function App() {
   }
   return (
     <div className="App">
-    <Header title={add}/>
-    
-    <Siginup/>
-    <Footer/>
+      <Router>
+        <Header title={add} />
+        <Routes>
+          <Route path="/" element={<h3>Home</h3>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
