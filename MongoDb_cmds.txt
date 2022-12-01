@@ -1,0 +1,113 @@
+##show all Db:
+-show dbs
+
+
+##change db:
+-use db_name //if DB doesnt exists then create one by name db_name
+
+
+##show current db:
+-db
+
+
+##delete db:
+-db.dropDatabase()
+
+
+##create new collection:
+-db.createCollection('collection_name')
+
+
+##show all collections:
+-show collections
+
+
+##drop collection in db:
+-db.collection_name.drop()
+
+
+##insert data in a collection:
+-db.collection_name.insert({"key":"value","key1":"value1"})
+-db.collection_name.insertOne({"key":"value","key1":"value1"})          //for single row entry
+-db.collection_name.insertMany([{"key":"value","key1":"value1"},{"key":"value","key1":"value1"}])       //for multiple entries
+
+
+##search for data in a collection
+-db.collection_name.find()
+-db.collection_name.find().pretty()         //not necessary in latest version,shows in better format
+-db.collection_name.findOne()               //returns the first data object
+-db.collection_name.find().count()          //returns the count of data objects
+-db.collection_name.countDocuments          //To be used only if above cmd doesnt work.
+-db.collection_name.find().limit(any_numeric_value)         //returns only the specified number of data objects
+
+-db.collection_name.find({"key":"value"})           //search for a specific field or entry, returns all data objects containing the same key:value pair
+-db.collection_name.findOne()           //you can use findOne to return only one data object having the same key:value pair
+-db.collection_name.find({"key":"value","key":"value","key":"value"})           //search for multiple key:value pairs in data
+
+
+##update values
+-db.collection_name.update({param1},{param2},{param3})
+param1: {key:value}         //data to be searched for
+param2: {$set:{key:value,key:value,key:value}}      //data to be updated or inserted.
+param3: {upsert:true}       //if there is no matching value then create new object and insert data.
+*you can use updateOne similarly for updating only one value
+
+-db.collection_name.remove({key:value})     //searches and removes the matching data objects
+*you can use deleteOne and deleteMany similarly
+
+**You can use $gte, $lte similarly, for any key, place {$filter_name:value} in value place.
+-db.collection_name.find("key":{$filter_name:value})
+
+
+--db.collection_name.aggregate([{$match:{key:value}},{$project:{key:1/0}}])
+--in $project - o/1 is given as binary
+
+
+//aggregate:group       //it groups data objects on the basis of passed key:value pair. Meaning it will group objects with similar values to a key.
+db.collection_name.aggregate(
+    [
+        {
+            $group:
+            {
+                "_id":{"address":"$address"},
+                "count":{$sum:1}
+            }
+        }
+    ]
+)
+//here by using count, we can print the number of objects in each group.
+
+//further aggregates like sort and project
+db.collection_name.aggregate(
+    [
+        {
+            $group:
+            {
+                "_id":{"address":"$address"},
+                "count":{$sum:1}
+            }
+        },
+        {
+            $sort:{
+                "count":-1,
+                "address":-1
+            }
+        },
+        {
+            $project:{
+                "_id":1
+            }
+        }
+    ]
+)
+
+
+
+
+
+
+
+
+
+
+
